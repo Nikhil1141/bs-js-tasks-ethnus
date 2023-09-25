@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1-js</title>
+</head>
+<body>
+    <script>
+        function alphabetizeString(inputString) {
+                let characters = inputString.split('');
+                characters.sort();
+                let sortedString = characters.join('');
+                return sortedString;
+            }
+            let inputString = 'webmaster';
+            let sortedResult = alphabetizeString(inputString);
+            // console.log(sortedResult); 
+            document.write(sortedResult);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4-js</title>
+</head>
+<body>
+    <h1>Date and Time</h1>
+    <button id="showDateButton">Show Date</button>
+    <button id="showISTButton">Show IST</button>
+    <p id="output"></p>
+
+    <script>
+        document.getElementById("showDateButton").addEventListener("click", function () {
+            const currentDate = new Date();
+            document.getElementById("output").textContent = `Current Date: ${currentDate.toDateString()}`;
+        });
+
+        document.getElementById("showISTButton").addEventListener("click", function () {
+            const istOffset = 5.5;
+            const currentDate = new Date();
+            const istDate = new Date(currentDate.getTime() + istOffset * 60 * 60 * 1000);
+            document.getElementById("output").textContent = `Current IST Time: ${istDate.toLocaleString()}`;
+        });
+    </script>
+</body>
+</html>

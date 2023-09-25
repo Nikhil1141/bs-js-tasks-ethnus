@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Animation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        @keyframes moveTrain {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .train {
+            width: 100px;
+            height: 50px;
+            background-color: #ff6600;
+            position: relative;
+            animation: moveTrain 5s linear infinite paused;
+        }
+
+        .animation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <div class="animation-container">
+                    <div class="train" id="train"><img
+                            src="https://thumbs.dreamstime.com/b/handsome-machinist-cartoon-uo-train-smile-waving-pict-handsome-machinist-cartoon-uo-train-smile-waving-102189491.jpg"
+                            alt="train" style="height: 100px;"></div>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-primary" id="startButton">Start</button>
+                    <button class="btn btn-danger" id="stopButton">Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const train = document.getElementById("train");
+        const startButton = document.getElementById("startButton");
+        const stopButton = document.getElementById("stopButton");
+
+        let animationPaused = true;
+
+        startButton.addEventListener("click", () => {
+            if (animationPaused) {
+                train.style.animationPlayState = "running";
+                animationPaused = false;
+            }
+        });
+
+        stopButton.addEventListener("click", () => {
+            if (!animationPaused) {
+                train.style.animationPlayState = "paused";
+                animationPaused = true;
+            }
+        });
+    </script>
+</body>
+
+</html>

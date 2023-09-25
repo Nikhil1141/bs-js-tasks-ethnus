@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Task5-js</title>
+</head>
+
+<body>
+    <center>
+        <form class="mt-5">
+            <table>
+                <tr>
+                    <td><label>Name:<input id="i1" onkeyup="checkun()" type="text" class="form my-3" /><span
+                                id="msg">This field is
+                                required</span></label></td>
+                </tr>
+                <tr>
+                    <td><label>Email:<input id="i2" onkeyup="checkemail()" type="email" class="form my-3"
+                                required /><span id="msg1">An email
+                                address
+                                is required</span></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Website:<input id="i3" onkeyup="checkweb()" type="text" class="form my-3" /><span
+                                id="msg">Avalid url is
+                                required</span></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Message:<textarea id="i4" class="form my-3" onkeyup="checkmess()"></textarea><span
+                                id="msg4">This field is
+                                required</span></label></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" class="form my-3 mx-5"></td>
+                </tr>
+
+            </table>
+        </form>
+    </center>
+    <script>
+
+        function checkun() {
+            var un = document.getElementById("i1").value;
+            if (un.length === 0) {
+                document.getElementById("msg").innerText = "This field is required";
+            }
+            else {
+                document.getElementById("msg").innerText = "";
+            }
+        }
+
+        // function checkemail() {
+        //     var mail = document.getElementById("i2").value;
+        //     var n = "";
+        //     var conform = (n.length + "@gmail.com");
+        //     if (mail !== conform) {
+        //         document.getElementById("msg1").innerText = "An email address is required(.....@gmail.com)";
+        //     }
+        //     else {
+        //         document.getElementById("msg1").innerText = "";
+        //     }
+        // }
+
+        function checkmess() {
+            var mess = document.getElementById("i4").value;
+            if (mess.length === 0) {
+                document.getElementById("msg4").innerText = "This field is required";
+            }
+            else {
+                document.getElementById("msg4").innerText = "";
+            }
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
